@@ -2,16 +2,15 @@ import React, { Component } from "react";
 import "./UsersList.css";
 
 function UserList(props) {
-  return (
-    <ul className="list">
-      <li>
-        Robert <span>x</span>
+  let userList = props.userList; //pobranie zawartosci z userList i wstawienie do UserList
+  let userLiElements = userList.map((user, index) => {
+    return (
+      <li key={index}>
+        {user} <span>x</span>
       </li>
-      <li>
-        Kacper <span>x</span>
-      </li>
-    </ul>
-  );
+    );
+  });
+  return <ul className="list">{userLiElements}</ul>;
 }
 
 export default UserList;

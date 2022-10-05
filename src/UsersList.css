@@ -22,3 +22,8 @@
     position: absolute;
     right: 1em;
 }
+
+.list li span:hover{
+  color: red;
+  cursor: pointer;
+}
