@@ -1,0 +1,23 @@
+.users-main form input {
+  padding: 1em;
+  font-size: 1em;
+  border: 2px solid #fff;
+  width: 10em;
+  outline: 0;
+}
+
+.users-main form button {
+  padding: 1em;
+  font-size: 1em;
+  margin: 0.8em;
+  background-color: #0066ff;
+  color: #fff;
+  border: 2px solid #0066ff;
+  outline: 0;
+}
+
+.users-main form button:hover{
+    cursor: pointer;
+    background: #003399;
+    border: 2px solid #003399;
+}
