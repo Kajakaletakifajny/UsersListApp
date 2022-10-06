@@ -10,7 +10,9 @@ class Users extends Component {
   }
   addUser = (event) => {
     event.preventDefault();
-    console.log(this.myRef);
+    let newUser = this.myRef.current.value;
+    this.setState((state)=>{return({users: state.users.push(newUser)})}); //referencja, value moza zamienic innymi
+    console.log(this.users);
   };
   render() {
     return (
@@ -20,7 +22,7 @@ class Users extends Component {
           <input type="text" placeholder="Enter name" ref={this.myRef}></input>
           <button>Add user</button>
         </form>
-        <UserList userList={["Filip", "Julia"]} />
+        <UserList userList={this.state.users} />
       </div>
     );
   }
