@@ -8,7 +8,7 @@ class Users extends Component {
     this.state = { users: [] };
     this.enterNameReference = React.createRef();
   }
-  
+
   addUser = (event) => {
     event.preventDefault();
     let newUser = this.enterNameReference.current.value;
@@ -21,11 +21,14 @@ class Users extends Component {
 
   removeUser = (userIndex) => {
     this.setState((state) => {
-      return ({
+      return {
         users: state.users.filter((user, index) => {
-          return index !== userIndex
+          return index !== userIndex;
         }),
-      })}};
+      };
+    });
+  };
+  //funkcja strzalkowa (strzalka) musi byc w tej samej lini co dalsza jej czesc
 
   render() {
     return (
