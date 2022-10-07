@@ -12,11 +12,13 @@ class Users extends Component {
   addUser = (event) => {
     event.preventDefault();
     let newUser = this.enterNameReference.current.value;
-    this.setState((state) => {
-      return { users: state.users.concat(newUser) };
-    }); //referencja, value moza zamienic innymi
-    console.log(this.users);
-    this.enterNameReference.current.value = "";
+    if (newUser !== "") {
+      this.setState((state) => {
+        return { users: state.users.concat(newUser) };
+      }); //referencja, value moza zamienic innymi
+      console.log(this.users);
+      this.enterNameReference.current.value = "";
+    } else alert("Cos musisz podac");
   };
 
   removeUser = (userIndex) => {
@@ -37,6 +39,7 @@ class Users extends Component {
         <form onSubmit={this.addUser}>
           {/* funkcja bez nawiasow to funkcja callback, jest wykonywana podczas jej wywolania, a funkcja z nawiasami wykonuje sie po kolei w programie */}
           <input
+            maxLength={22}
             type="text"
             placeholder="Enter name"
             ref={this.enterNameReference}
