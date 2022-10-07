@@ -3,10 +3,11 @@ import "./UsersList.css";
 
 function UserList(props) {
   let userList = props.userList; //pobranie zawartosci z userList i wstawienie do UserList
+  
   let userLiElements = userList.map((user, index) => {
     return (
       <li key={index}>
-        {user} <span>x</span>
+        {user} <span onClick={()=>{props.removeMethod(index)}}>x</span>
       </li>
     );
   });
