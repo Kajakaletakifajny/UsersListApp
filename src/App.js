@@ -1,13 +1,13 @@
 import logo from "./logo.svg";
 import "./App.css";
-import Users from "./Users";
 import React from "react";
+import UsersStates from "./Users2";
 
 function App() {
   return (
     <div className="App">
       <React.StrictMode>
-    <Users />
+    <UsersStates />
   </React.StrictMode>
     </div>
   );
